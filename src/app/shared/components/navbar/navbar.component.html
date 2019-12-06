@@ -1,0 +1,139 @@
+<!-- 1. Navbar genarated from angular schematics -->
+
+<!-- <mat-sidenav-container class="sidenav-container">
+  <mat-sidenav #drawer class="sidenav" fixedInViewport
+      [attr.role]="(isHandset$ | async) ? 'dialog' : 'navigation'"
+      [mode]="(isHandset$ | async) ? 'over' : 'side'"
+      [opened]="(isHandset$ | async) === false">
+    <mat-toolbar>Menu</mat-toolbar>
+    <mat-nav-list>
+      <a mat-list-item href="#">Manage Employees</a>
+      <a mat-list-item href="#">Statitics</a>
+      <a mat-list-item href="#">Settings</a>
+    </mat-nav-list>
+  </mat-sidenav>
+  <mat-sidenav-content>
+    <mat-toolbar color="primary">
+      <button
+        type="button"
+        aria-label="Toggle sidenav"
+        mat-icon-button
+        (click)="drawer.toggle()"
+        *ngIf="isHandset$ | async">
+        <mat-icon aria-label="Side nav toggle icon">menu</mat-icon>
+      </button>
+      <span>NgMaterial-Monorepo</span>
+    </mat-toolbar> -->
+<!-- Add Content Here -->
+<!-- </mat-sidenav-content>
+</mat-sidenav-container> -->
+
+<!-- /1. Navbar genarated from angular schematics -->
+
+<!-- 2.Custom Navbar -->
+
+<mat-sidenav-container fullscreen>
+  <mat-sidenav #left>
+    <mat-toolbar>
+      Links
+      <span class="fill-spacer"></span>
+      <button
+        mat-icon-button
+        (click)="left.close()"
+        matTooltip="Close sidenav"
+        matTooltipPosition="right"
+      >
+        <mat-icon>keyboard_arrow_left</mat-icon>
+      </button>
+    </mat-toolbar>
+    <mat-nav-list>
+      <a
+        mat-list-item
+        (click)="left.close()"
+        routerLink="/home"
+        routerLinkActive="active-link"
+      >
+        <mat-icon matListIcon>home</mat-icon>
+        <h3 matLine>Home</h3>
+      </a>
+      <a
+        mat-list-item
+        (click)="left.close()"
+        routerLink="/products"
+        routerLinkActive="active-link"
+      >
+        <mat-icon matListIcon>laptop</mat-icon>
+        <h3 matLine>Manage Products</h3>
+      </a>
+      <a
+        mat-list-item
+        (click)="left.close()"
+        routerLink="/statistics"
+        routerLinkActive="active-link"
+      >
+        <mat-icon matListIcon>insert_chart</mat-icon>
+        <h3 matLine>Statistics</h3>
+        <p matLine>Chart based analysis</p>
+      </a>
+      <h3 matSubheader>Other</h3>
+      <a (click)="left.close()" mat-list-item routerLink="/settings" routerLinkActive="active-link">
+        <mat-icon matListIcon>settings_applications</mat-icon>
+        <h3 matLine>Settings</h3>
+        <p matLine></p>
+      </a>
+      <a mat-list-item routerLink="/logout" routerLinkActive="active-link">
+        <mat-icon matListIcon>info</mat-icon>
+        <h3 matLine>Log out</h3>
+      </a>
+    </mat-nav-list>
+  </mat-sidenav>
+  <mat-sidenav-content>
+    <mat-toolbar color="primary" class="mat-elevation-z3">
+      <button mat-icon-button (click)="left.toggle()">
+        <mat-icon>menu</mat-icon>
+      </button>
+      <p>Mono Repo</p>
+      <span class="fill-spacer"></span>
+      <button
+        mat-icon-button
+        [matMenuTriggerFor]="moreMenu"
+        matTooltip="More options"
+      >
+        <mat-icon>more_vert</mat-icon>
+      </button>
+      <mat-menu #moreMenu="matMenu">
+        <a
+          mat-menu-item
+          href="https://github.com/manjunath-nrh/AngularMaterial-Responsive-Route-Template"
+          target="_blank"
+        >
+          <mat-icon>code</mat-icon>
+          View source code
+        </a>
+        <a
+          mat-menu-item
+          href="https://github.com/manjunath-nrh?tab=repositories"
+          target="_blank"
+        >
+          <mat-icon>
+            <svg width="24px" height="24px" viewBox="0 0 24 24">
+              <path
+                d="M17.36,20.2V14.82H19.15V22H3V14.82H4.8V20.2H17.36M6.77,14.32L7.14,12.56L15.93,14.41L15.56,16.17L6.77,14.32M7.93,10.11L8.69,8.5L16.83,12.28L16.07,13.9L7.93,10.11M10.19,6.12L11.34,4.74L18.24,10.5L17.09,11.87L10.19,6.12M14.64,1.87L20,9.08L18.56,10.15L13.2,2.94L14.64,1.87M6.59,18.41V16.61H15.57V18.41H6.59Z"
+              />
+            </svg>
+          </mat-icon>
+          My Repo
+        </a>
+        <a mat-menu-item href="" target="_blank">
+          <mat-icon>open_in_new</mat-icon>
+          Open page in new tab
+        </a>
+      </mat-menu>
+    </mat-toolbar>
+    <div class="app-container">
+      <router-outlet></router-outlet>
+    </div>
+  </mat-sidenav-content>
+</mat-sidenav-container>
+
+<!-- /2. Custom Navbar-->

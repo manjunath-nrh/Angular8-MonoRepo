@@ -1,1 +1,36 @@
 /* You can add global styles to this file, and also import other style files */
+
+html,
+body {
+  height: 100%;
+}
+body {
+  margin: 0;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+}
+.app-container {
+  padding: 5px;
+}
+.version-info {
+  font-size: 8pt;
+  float: right;
+}
+.active-link {
+  background-color: #e0e0e0 !important;
+  color: #673ab7 !important;
+}
+.fill-spacer {
+  flex: 1 1 auto;
+}
+.mat-drawer-content {
+  overflow: hidden !important;
+}
+.top-heading {
+  padding: 0 10px;
+}
+
+@media all and (max-width: 600px) {
+  .mat-drawer-content {
+    overflow: auto !important;
+  }
+}
